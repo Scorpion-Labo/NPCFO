@@ -3,32 +3,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/</loc>
+<loc>https://npcfoadvisory.com/</loc>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/services.html</loc>
+<loc>https://npcfoadvisory.com/services.html</loc>
 </url>
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/contact.html</loc>
+<loc>https://npcfoadvisory.com/contact.html</loc>
 </url>
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/insights.html</loc>
+<loc>https://npcfoadvisory.com/insights.html</loc>
 </url>
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/team.html</loc>
+<loc>https://npcfoadvisory.com/team.html</loc>
 </url>
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/tools.html</loc>
+<loc>https://npcfoadvisory.com/tools.html</loc>
 </url>
 
 <url>
-<loc>https://nonprofitcfoadvisory.com/who-we-serve.html</loc>
+<loc>https://npcfoadvisory.com/who-we-serve.html</loc>
 </url>
 
+<url>
+<loc>https://npcfoadvisory.com/legal.html</loc>
+</url>
+
+<url>
+<loc>https://npcfoadvisory.com/ca-compliance-calendar.html</loc>
+</url>
+
+  
 </urlset>
