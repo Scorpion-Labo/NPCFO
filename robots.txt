@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nonprofitcfoadvisory.com/sitemap.xml
