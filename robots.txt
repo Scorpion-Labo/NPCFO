@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nonprofitcfoadvisory.com/sitemap.xml
+Sitemap: https://npcfoadvisory.com/sitemap.xml
