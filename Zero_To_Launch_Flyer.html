@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4YENW7ZQH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-R4YENW7ZQH');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png">
+  <title>Zero To Launch — NP CFO Advisory LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-deep: #0d4f2e;
+      --green-mid: #1a6b3e;
+      --green-light: #2d8a54;
+      --green-pale: #e8f5ee;
+      --gold: #c9a84c;
+      --gold-light: #e8c96e;
+      --white: #ffffff;
+      --off-white: #f8faf8;
+      --text-dark: #1a2e22;
+      --text-mid: #3d5a47;
+      --text-light: #6b8a74;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background: #e8e8e8;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 32px 16px;
+    }
+
+    /* ── Flyer Shell (8.5 × 11in print-ready) ── */
+    .flyer {
+      width: 816px;
+      min-height: 1056px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOP HEADER BAND ── */
+    .header {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      padding: 36px 52px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+    }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 40%;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .launch-badge {
+      background: var(--gold);
+      color: var(--green-deep);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .rocket-icon {
+      font-size: 52px;
+      margin-bottom: 12px;
+      display: block;
+      line-height: 1;
+    }
+
+    .service-label {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+
+    .headline span {
+      color: var(--gold);
+    }
+
+    .tagline {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 15.5px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.55;
+      max-width: 520px;
+      margin-top: 10px;
+    }
+
+    /* ── GOLD DIVIDER ── */
+    .gold-bar {
+      height: 5px;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      flex: 1;
+      padding: 36px 52px 28px;
+      background: var(--white);
+    }
+
+    .intro {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      margin-bottom: 30px;
+      border-left: 4px solid var(--gold);
+      padding-left: 18px;
+    }
+
+    .section-title {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* ── Services Grid ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-bottom: 30px;
+    }
+
+    .service-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .service-dot {
+      width: 7px;
+      height: 7px;
+      min-width: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 6px;
+    }
+
+    .service-text {
+      font-size: 13.5px;
+      color: var(--text-dark);
+      line-height: 1.45;
+      font-weight: 400;
+    }
+
+    /* ── THREE PILLARS ── */
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .pillar {
+      background: var(--green-pale);
+      border-top: 3px solid var(--green-deep);
+      border-radius: 10px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+
+    .pillar-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .pillar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 4px;
+    }
+
+    .pillar-desc {
+      font-size: 11.5px;
+      color: var(--text-mid);
+      line-height: 1.45;
+    }
+
+    /* ── WHO IT'S FOR STRIP ── */
+    .audience-strip {
+      background: var(--green-pale);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .audience-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green-deep);
+      white-space: nowrap;
+      min-width: 100px;
+    }
+
+    .audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--white);
+      border: 1.5px solid var(--green-light);
+      color: var(--green-mid);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── NOTE / DISCLAIMER ── */
+    .note-box {
+      background: var(--off-white);
+      border-left: 3px solid var(--text-light);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+    }
+
+    .note-box p {
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    .note-box strong {
+      color: var(--text-mid);
+    }
+
+    /* ── CTA FOOTER ── */
+    .cta-footer {
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
+      padding: 28px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .cta-left h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .cta-left p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+
+    .cta-btn {
+      background: var(--gold);
+      color: var(--green-deep);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+      letter-spacing: 0.04em;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background: var(--gold-light);
+    }
+
+    /* ── BOTTOM INFO BAR ── */
+    .info-bar {
+      background: #0a3d23;
+      padding: 10px 52px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .info-bar span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .info-bar a {
+      font-size: 11px;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body { background: none; padding: 0; }
+      .flyer { box-shadow: none; width: 100%; min-height: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="flyer">
+
+    <!-- ══ HEADER ══ -->
+    <div class="header">
+      <div class="header-top">
+        <span class="brand-name">NP CFO Advisory LLC</span>
+        <span class="launch-badge">New Service</span>
+      </div>
+      <span class="rocket-icon">🚀</span>
+      <div class="service-label">Small Business Launch &amp; Setup</div>
+      <h1 class="headline">Zero To <span>Launch</span></h1>
+      <p class="tagline">Start your small business with peace of mind — from structure and setup to systems and a live website, all in one guided service.</p>
+    </div>
+
+    <!-- ══ GOLD DIVIDER ══ -->
+    <div class="gold-bar"></div>
+
+    <!-- ══ MAIN CONTENT ══ -->
+    <div class="content">
+
+      <p class="intro">
+        Start a small business with peace of mind, from setup to systems — all in one place. <strong>Zero To Launch</strong> walks alongside you from day one, so you can focus on your vision while we handle the foundation.
+      </p>
+
+      <!-- Services List -->
+      <div class="section-title">What's Included</div>
+      <div class="services-grid">
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Business concept review and development</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Web-based market research and digital competitive landscape analysis</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Business registration (LLC, S-Corp, Corporation, Nonprofit) and EIN tax registration — guidance and support</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Business banking guidance</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Business domain registration and website hosting setup</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Business email setup with Google Workspace / Office 365</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">3-Page Static Informational Website Build &amp; Content Writing</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Basic logo design for website purposes</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Accounting system selection and configuration (QuickBooks Online / Sage Intacct)</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Chart of accounts design for new business</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Compliance calendar template</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Operational templates</span>
+        </div>
+        <div class="service-item">
+          <div class="service-dot"></div>
+          <span class="service-text">Ongoing retainer support available after launch</span>
+        </div>
+      </div>
+
+      <!-- Three Pillars -->
+      <div class="section-title">Our Approach</div>
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-icon">🏗️</span>
+          <div class="pillar-title">Build the Foundation</div>
+          <p class="pillar-desc">Legal structure, registration, EIN, and banking — set up correctly from day one.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">🌐</span>
+          <div class="pillar-title">Establish Your Presence</div>
+          <p class="pillar-desc">Domain, email, logo, and a professional 3-page website — your business, live online.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-icon">📊</span>
+          <div class="pillar-title">Systemize &amp; Launch</div>
+          <p class="pillar-desc">Accounting system, chart of accounts, compliance calendar — ready to operate cleanly.</p>
+        </div>
+      </div>
+
+      <!-- Who It's For -->
+      <div class="section-title">Who This Is For</div>
+      <div class="audience-strip">
+        <span class="audience-label">Built for:</span>
+        <div class="audience-tags">
+          <span class="tag">Aspiring Entrepreneurs</span>
+          <span class="tag">Early-Stage Founders</span>
+          <span class="tag">Side-Hustle Owners</span>
+          <span class="tag">First-Time Business Owners</span>
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <div class="note-box">
+        <p><strong>Note:</strong> We provide guidance and support throughout the process. All registrations, filings, and governmental approvals are the client's responsibility. Templates are for general reference only and should be reviewed by a qualified attorney before use. NP CFO Advisory LLC does not provide legal, tax, or licensed financial advice.</p>
+      </div>
+
+    </div><!-- /content -->
+
+    <!-- ══ CTA FOOTER ══ -->
+    <div class="cta-footer">
+      <div class="cta-left">
+        <h3>Ready to launch your business?</h3>
+        <p>Schedule a free consultation and let's build your foundation together.</p>
+      </div>
+      <a class="cta-btn" href="https://npcfoadvisory.com/contact.html" target="_blank" rel="noopener noreferrer">Schedule a Consultation →</a>
+    </div>
+
+    <!-- ══ INFO BAR ══ -->
+    <div class="info-bar">
+      <span>NP CFO Advisory LLC &nbsp;|&nbsp; Strategic Financial Leadership for Nonprofits, Startups &amp; Small Businesses</span>
+      <a href="https://npcfoadvisory.com">npcfoadvisory.com</a>
+    </div>
+
+  </div><!-- /flyer -->
+  <div style="text-align:center;padding:1rem 0 0.5rem;">
+    <a href="tools.html" style="color:#1a6b3e;font-size:0.85rem;font-weight:600;text-decoration:none;">&#8592; Back to Tools &amp; Resources</a>
+  </div>
+</body>
+</html>
