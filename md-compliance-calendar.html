@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R4YENW7ZQH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-R4YENW7ZQH');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Maryland SMLLC / S-Corp Tax Compliance Calendar</title>
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:   #0d4f2e;
+  --blue:   #1a6b3e;
+  --blue2:  #2d8a57;
+  --lblue:  #e8f5ee;
+  --xblue:  #f4faf6;
+  --white:  #ffffff;
+  --off:    #f8fafc;
+  --gray:   #f1f5f9;
+  --border: #cbd5e1;
+  --text:   #1e293b;
+  --muted:  #64748b;
+  --dim:    #94a3b8;
+  --green:  #0d4f2e;
+  --lgreen: #f0faf4;
+  --amber:  #8a6a00;
+  --lamber: #fdf8e8;
+  --radius: 10px;
+}
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  background: #f5f7f5;
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* ── HEADER ── */
+.page-header {
+  background: linear-gradient(135deg, #0d4f2e 0%, #0a3d22 60%, #1a6b3e 100%);
+  padding: 40px 48px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 60px,
+    rgba(255,255,255,0.015) 60px,
+    rgba(255,255,255,0.015) 61px
+  );
+  pointer-events: none;
+}
+.header-inner { position: relative; max-width: 1100px; margin: 0 auto; }
+.header-eyebrow {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #c9a84c;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+.header-sub {
+  font-size: 13px;
+  color: #c9a84c;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+.header-meta {
+  display: flex;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.meta-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 99px;
+  padding: 5px 14px;
+  font-size: 11px;
+  color: #e8d5a0;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+/* ── YEAR TOGGLE ── */
+.header-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.yr-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+.yr-toggle-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #c9a84c;
+  margin-right: 10px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+.yr-btn {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(201,168,76,0.5);
+  padding: 5px 16px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #e8d5a0;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+.yr-btn:first-of-type { border-radius: 99px 0 0 99px; border-right: none; }
+.yr-btn:last-of-type  { border-radius: 0 99px 99px 0; }
+.yr-btn.active { background: #c9a84c; color: #0d4f2e; border-color: #c9a84c; font-weight: 700; }
+.yr-btn:hover:not(.active) { background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(201,168,76,0.8); }
+
+/* ── NAV TABS ── */
+.nav-wrap {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+}
+.nav-tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 14px 20px 12px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.nav-tab:hover { color: var(--navy); }
+.nav-tab.active { color: var(--navy); border-bottom-color: var(--blue2); font-weight: 600; }
+.nav-badge {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  background: var(--gray);
+  border-radius: 99px;
+  padding: 1px 7px;
+  color: var(--dim);
+}
+.nav-tab.active .nav-badge { background: var(--lblue); color: var(--blue); }
+
+/* ── MAIN LAYOUT ── */
+.main { max-width: 1100px; margin: 0 auto; padding: 32px 48px; }
+
+/* ── PANEL ── */
+.panel { display: none; animation: fadeIn 0.2s ease; }
+.panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── SECTION CARD ── */
+.section-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.section-title {
+  background: var(--navy);
+  color: #fff;
+  padding: 13px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-title .count {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 99px;
+  padding: 2px 9px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ── TABLE ── */
+.tbl { width: 100%; border-collapse: collapse; }
+.tbl-head th {
+  background: #1e3a6e;
+  color: #e8d5a0;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  text-align: left;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.tbl-head th:last-child { border-right: none; }
+.tbl .col-filing { width: 30%; }
+.tbl .col-agency { width: 13%; }
+.tbl .col-due    { width: 17%; }
+.tbl .col-notes  { width: 40%; }
+
+.tbl tbody tr { border-bottom: 1px solid var(--border); transition: background 0.12s; }
+.tbl tbody tr:last-child { border-bottom: none; }
+.tbl tbody tr:hover { background: #f8fbff; }
+.tbl tbody tr.alt { background: var(--xblue); }
+.tbl tbody tr.alt:hover { background: #edf5ff; }
+
+.tbl td {
+  padding: 14px 16px;
+  font-size: 13px;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.filing-name {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.filing-sub { font-size: 11.5px; color: var(--muted); font-weight: 300; }
+.agency-pill {
+  display: inline-block;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+/* Federal agencies */
+.ag-irs    { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+.ag-ssa    { background: #e0f2fe; color: #075985; border: 1px solid #bae6fd; }
+.ag-dol    { background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
+.ag-plan   { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+/* Maryland agencies */
+.ag-mdcomp { background: #fff1f2; color: #9f1239; border: 1px solid #fda4af; }
+.ag-sdat   { background: #fdf4ff; color: #701a75; border: 1px solid #e879f9; }
+.ag-mddllr { background: #ede9fe; color: #4c1d95; border: 1px solid #c4b5fd; }
+.ag-mdocse { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.ag-both   { background: #f0f9ff; color: #0c4a6e; border: 1px solid #7dd3fc; }
+.ag-planning { background: #f0fdf4; color: #166534; border: 1px solid #86efac; }
+
+.due-date {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.6;
+}
+.notes-text { font-size: 12px; color: #374151; line-height: 1.6; font-weight: 300; }
+.notes-text strong { font-weight: 600; color: var(--text); }
+
+/* ── ALERT ROW ── */
+.alert-row td { background: #fffbeb !important; }
+.alert-row:hover td { background: #fef3c7 !important; }
+.alert-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #92400e;
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 99px;
+  padding: 2px 9px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* ── PLANNING ROW ── */
+.planning-row td { background: #f0fdf4 !important; }
+.planning-row:hover td { background: #e6f9ee !important; }
+.planning-label {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  border-radius: 99px;
+  padding: 2px 9px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+/* ── TIMELINE ── */
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.tl-cell {
+  padding: 18px 20px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.tl-cell:nth-child(3n) { border-right: none; }
+.tl-cell:nth-last-child(-n+3) { border-bottom: none; }
+.tl-cell.alt { background: var(--xblue); }
+.tl-month {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.tl-items { list-style: none; }
+.tl-items li {
+  font-size: 11.5px;
+  color: var(--muted);
+  padding: 2px 0 2px 12px;
+  position: relative;
+  line-height: 1.5;
+}
+.tl-items li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: var(--blue2);
+  font-weight: 700;
+}
+.tl-items li.fed { color: #92400e; }
+.tl-items li.fed::before { color: #f59e0b; }
+.tl-items li.md { color: #701a75; }
+.tl-items li.md::before { color: #a21caf; }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  background: var(--lamber);
+  border: 1px solid #fde68a;
+  border-left: 4px solid #f59e0b;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  margin-top: 8px;
+}
+.disclaimer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--amber);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.disclaimer-body {
+  font-size: 12px;
+  color: #78350f;
+  line-height: 1.75;
+  font-weight: 300;
+}
+.disclaimer-body p { margin-bottom: 8px; }
+.disclaimer-body p:last-child { margin-bottom: 0; }
+.disclaimer-sources {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #fde68a;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 10px;
+  color: #b45309;
+  line-height: 1.9;
+}
+
+/* ── INFO BOX ── */
+.info-box {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-left: 4px solid #22c55e;
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  font-size: 12.5px;
+  color: #14532d;
+  line-height: 1.75;
+}
+.info-box strong { font-weight: 700; color: #0d4f2e; }
+.info-box-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0d4f2e;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .page-header { padding: 28px 20px 24px; }
+  .header-title { font-size: 24px; }
+  .nav-inner { padding: 0 16px; }
+  .main { padding: 20px 16px; }
+  .timeline-grid { grid-template-columns: 1fr; }
+  .tl-cell { border-right: none; }
+  .tbl .col-notes { display: none; }
+}
+</style>
+</head>
+<body>
+<div style="background:#0d4f2e;padding:0.6rem 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 48px;">
+    <a href="tools.html" style="color:#c9a84c;font-family:'Source Sans 3',sans-serif;font-size:0.85rem;font-weight:600;text-decoration:none;">← Back to Tools &amp; Resources</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="page-header">
+  <div class="header-inner">
+    <div class="header-eyebrow">Maryland · SMLLC Taxed as S-Corp</div>
+    <h1 class="header-title">Tax &amp; Compliance Calendar</h1>
+    <div class="header-sub header-sub-row">
+      <span>Federal + Maryland state obligations · entity-level + owner-employee &nbsp;|&nbsp; <span class="yr-val" data-2025="Tax Year: 2025 filing in 2026" data-2026="Tax Year: 2026 filing in 2027">Tax Year: 2025 filing in 2026</span></span>
+      <div class="yr-toggle">
+        <span class="yr-toggle-label">Tax Year:</span>
+        <button class="yr-btn active" data-yr="2025" onclick="setYear('2025')">2025</button>
+        <button class="yr-btn"        data-yr="2026" onclick="setYear('2026')">2026</button>
+      </div>
+    </div>
+    <div class="header-meta">
+      <span class="meta-pill">📅 Monthly</span>
+      <span class="meta-pill">📊 Quarterly</span>
+      <span class="meta-pill">📋 Annual</span>
+      <span class="meta-pill">🏢 Entity Maintenance</span>
+      <span class="meta-pill">⚙️ Tax Components</span>
+      <span class="meta-pill">💡 S-Corp Planning</span>
+      <span class="meta-pill">🗓️ Timeline</span>
+      <span class="meta-pill">⚠️ Risk Flags</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="nav-inner">
+    <button class="nav-tab active" data-tab="monthly"    onclick="switchTab('monthly')">    📅 Monthly    <span class="nav-badge">3</span></button>
+    <button class="nav-tab"        data-tab="quarterly"  onclick="switchTab('quarterly')">  📊 Quarterly  <span class="nav-badge">5</span></button>
+    <button class="nav-tab"        data-tab="annual"     onclick="switchTab('annual')">     📋 Annual     <span class="nav-badge">10</span></button>
+    <button class="nav-tab"        data-tab="entity"     onclick="switchTab('entity')">     🏢 Entity Maintenance <span class="nav-badge">3</span></button>
+    <button class="nav-tab"        data-tab="components" onclick="switchTab('components')"> ⚙️ Tax Components <span class="nav-badge">9</span></button>
+    <button class="nav-tab"        data-tab="planning"   onclick="switchTab('planning')">   💡 S-Corp Planning <span class="nav-badge">5</span></button>
+    <button class="nav-tab"        data-tab="timeline"   onclick="switchTab('timeline')">   🗓️ Timeline   <span class="nav-badge">6</span></button>
+    <button class="nav-tab"        data-tab="riskflags"  onclick="switchTab('riskflags')">  ⚠️ Risk Flags <span class="nav-badge">7</span></button>
+    <button class="nav-tab"        data-tab="yearcompare" onclick="switchTab('yearcompare')">📊 2025 vs 2026 <span class="nav-badge">6</span></button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ════════════════════════════════════════════════════════════
+     MONTHLY
+════════════════════════════════════════════════════════════ -->
+<div class="panel active" id="panel-monthly">
+  <div class="info-box">
+    <div class="info-box-title">📌 Who This Applies To</div>
+    Monthly obligations apply only if the LLC pays wages — including the owner-employee's reasonable compensation. If no wages are paid in a given month, no payroll deposits or returns are required. However, an S-corp owner who performs services <strong>must</strong> receive reasonable W-2 compensation — paying zero salary is a significant IRS audit trigger.
+  </div>
+  <div class="section-card">
+    <div class="section-title">
+      Monthly Payroll Tax Filings
+      <span class="count">3 ITEMS · APPLIES IF WAGES ARE PAID</span>
+    </div>
+    <table class="tbl">
+      <colgroup>
+        <col class="col-filing"/><col class="col-agency"/>
+        <col class="col-due"/><col class="col-notes"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr><th>Filing / Requirement</th><th>Agency</th><th>Due Date</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Federal Payroll Tax Deposit</div><div class="filing-sub">FIT · Social Security · Medicare (FICA)</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">15th of following month<br><span style="font-size:10px;color:var(--muted)">(monthly depositors — lookback period ≤ $50,000)</span></div></td>
+          <td><span class="notes-text">Deposit via EFTPS. Semi-weekly depositors must deposit within 3 business days of payroll. <strong>Includes both employer and employee share of FICA</strong> on the owner-employee's W-2 wages. Confirm schedule via IRS Pub. 15 lookback period analysis.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland Income Tax Withholding Deposit</div><div class="filing-sub">Form MW506 (monthly) — employee and owner-employee wages</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller</span></td>
+          <td><div class="due-date">15th of following month<br><span style="font-size:10px;color:var(--muted)">(monthly if MD withholding &gt; $700/month)</span></div></td>
+          <td><span class="notes-text">File and pay via Maryland's <strong>bFile system</strong> (interactive.marylandtaxes.gov). Quarterly filing permitted if monthly withholding is $700 or less. Semi-weekly schedule applies for large-liability employers. Must withhold on both employee wages and owner-employee W-2 compensation.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Retirement Plan Contributions</div><div class="filing-sub">Solo 401(k) · SEP-IRA · SIMPLE IRA</div></td>
+          <td><span class="agency-pill ag-plan">DOL / Custodian</span></td>
+          <td><div class="due-date">As soon as<br>administratively<br>feasible<br><span style="font-size:10px;color:var(--muted)">(DOL safe harbor: within 7 business days for small plans)</span></div></td>
+          <td><span class="notes-text">Employee deferral contributions must be segregated and remitted promptly. Employer contributions to a Solo 401(k) or SEP-IRA are due by the tax return due date including extensions. Late employee deferrals are a <strong>prohibited transaction under ERISA</strong>.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This calendar is a general reference for a Maryland single member LLC (SMLLC) that has elected S-corporation tax treatment under IRC §1361. It covers federal and Maryland state compliance obligations and is intended for informational purposes only.</p>
+      <p>Tax laws and filing requirements change frequently. Always consult a qualified CPA, enrolled agent, or tax attorney before relying on this document. Deadlines assume a December 31 fiscal year end. This document does not constitute legal or tax advice.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Pub. 15 (Circular E) · IRS Pub. 15-T · Maryland Employer Withholding Guide · Maryland Code Ann. Tax-Gen. §10-906</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     QUARTERLY
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-quarterly">
+  <div class="section-card">
+    <div class="section-title">
+      Quarterly Filings — Federal &amp; Maryland
+      <span class="count">5 ITEMS · DUE APR · JUN · SEP · DEC/JAN</span>
+    </div>
+    <table class="tbl">
+      <colgroup><col class="col-filing"/><col class="col-agency"/><col class="col-due"/><col class="col-notes"/></colgroup>
+      <thead class="tbl-head">
+        <tr><th>Filing / Requirement</th><th>Agency</th><th>Due Date</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Form 941</div><div class="filing-sub">Employer's Quarterly Federal Tax Return</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">Apr 30 · Jul 31<br>Oct 31 · Jan 31</div></td>
+          <td><span class="notes-text">Reports federal income tax withheld plus employer and employee FICA on all wages paid (including owner-employee compensation). A <strong>10-day filing extension</strong> applies if all taxes were deposited timely. E-file strongly recommended. Use Form 944 only if IRS has specifically notified you to do so.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland Withholding Return (MW506)</div><div class="filing-sub">Quarterly Return of Income Tax Withheld</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller</span></td>
+          <td><div class="due-date">Apr 15 · Jul 15<br>Oct 15 · Jan 15<br><span style="font-size:10px;color:var(--muted)">(quarterly filers with ≤ $700/month)</span></div></td>
+          <td><span class="notes-text">File via Maryland bFile. Quarterly filers submit MW506 and payment within 15 days after each quarter-end. Annual reconciliation on Form MW508 is due January 31. Retain copies of all W-4s on file for owner-employee and any other employees.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Maryland Unemployment Insurance</div><div class="filing-sub">Quarterly Contribution Report — BEACON system</div></td>
+          <td><span class="agency-pill ag-mddllr">MD DLLR</span></td>
+          <td><div class="due-date">Apr 30 · Jul 31<br>Oct 31 · Jan 31</div></td>
+          <td><span class="notes-text">Report and pay Maryland State Unemployment Insurance (SUI) via the <strong>BEACON employer portal</strong> (beacon.labor.maryland.gov). <span class="yr-val" data-2025="2025 taxable wage base: $8,500 per employee." data-2026="2026 taxable wage base: $8,500 per employee (subject to annual DLLR announcement).">2025 taxable wage base: $8,500 per employee.</span> New employer rate: approximately 2.3%–2.6% depending on industry classification and surcharges.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Federal Estimated Tax — Form 1040-ES</div><div class="filing-sub">Owner's individual estimated tax on K-1 income &amp; distributions</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">Apr 15 · Jun 15<br>Sep 15 · Jan 15</div></td>
+          <td><span class="notes-text">S-corp income flows through to the owner's Form 1040 via Schedule K-1. Pay quarterly estimated taxes on K-1 pass-through income, net of any FICA withheld from W-2 wages. Use the <strong>safe harbor</strong> (100% or 110% of prior-year tax liability, or 90% of current-year liability) to avoid underpayment penalties.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Maryland Estimated Tax — Form PV / 510D</div><div class="filing-sub">Owner's MD estimated tax (Form PV) · Entity-level PTE estimate (Form 510D)</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller</span></td>
+          <td><div class="due-date">Apr 15 · Jun 15<br>Sep 15 · <strong>Dec 15</strong><br><span style="font-size:10px;color:var(--muted)">(4th installment Dec 15 — differs from federal)</span></div></td>
+          <td><span class="notes-text"><strong>Two separate streams:</strong> (1) Owner pays individual estimated tax (Form PV) on their share of K-1 income. (2) If the PTE Election (Form 511) is made, the entity pays estimated entity-level tax via Form 510D on the same April/June/September/December schedule. Maryland's 4th installment is due <strong>December 15</strong>, not January 15 as with federal.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This calendar is a general reference for a Maryland SMLLC with S-corp election. Quarterly due dates shown assume a December 31 fiscal year end. Maryland withholding frequency (monthly vs. quarterly) is determined by your accumulated liability — confirm your classification with the Maryland Comptroller.</p>
+      <p>Tax laws change frequently. Always consult a qualified CPA or tax attorney. This document does not constitute legal or tax advice.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Form 941 Instructions · IRS Form 1040-ES Instructions · Maryland DLLR BEACON Guide · Maryland Comptroller bFile · Maryland Code Ann. Tax-Gen. §10-315</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     ANNUAL
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-annual">
+  <div class="section-card">
+    <div class="section-title">
+      Annual Tax Filings — Entity &amp; Owner
+      <span class="count">10 ITEMS</span>
+    </div>
+    <table class="tbl">
+      <colgroup><col class="col-filing"/><col class="col-agency"/><col class="col-due"/><col class="col-notes"/></colgroup>
+      <thead class="tbl-head">
+        <tr><th>Filing / Requirement</th><th>Agency</th><th>Due Date</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Form 1120-S</div><div class="filing-sub">U.S. Income Tax Return for an S-Corporation</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date"><strong>March 16, 2026</strong><br><span style="font-size:10px;color:var(--muted)">(March 15 falls on Sunday in 2026 → moves to Monday Mar 16 · extension to Sep 15 via Form 7004)</span></div></td>
+          <td><span class="notes-text">The primary annual tax return for the S-corp. Reports total income, deductions, and owner's pro-rata share. Generates Schedule K-1 (Form 1120-S) for the owner. <strong>Must be filed even if no taxable income.</strong> Extension Form 7004 grants 6 additional months (to Sep 15 for calendar year filers). Late filing penalty: $235/month per shareholder (2025 rate; adjusted annually for inflation — verify current rate at IRS.gov each filing season).</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland Form 510 or 511</div><div class="filing-sub">Pass-Through Entity Income Tax Return · PTE Election</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller</span></td>
+          <td><div class="due-date">March 15<br><span style="font-size:10px;color:var(--muted)">(extension to Oct 15 via Form 510E)</span></div></td>
+          <td><span class="notes-text"><strong>Form 510:</strong> Standard Maryland PTE return. Reports Maryland-source income for each owner and withholds Maryland tax for nonresident owners. <strong>Form 511:</strong> Filed instead of 510 if the entity makes the Maryland PTE Election — entity pays tax at 8% (resident) or 8.25% (nonresident corporate). Extension Form 510E grants 7 months to October 15. Must pay 100% of tax with extension request to avoid penalties.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Schedule K-1 (Form 1120-S)</div><div class="filing-sub">Shareholder's Share of Income — to owner</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">By Form 1120-S<br>due date<br>(March 15 or extension)</div></td>
+          <td><span class="notes-text">Issued by the S-corp to the single owner. Shows the owner's 100% share of income, deductions, credits, and distributions. The owner uses this to complete their Form 1040, Schedule E. <strong>K-1 income is not subject to self-employment tax</strong> — a key advantage of the S-corp election over a disregarded entity or sole proprietorship.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Form W-2</div><div class="filing-sub">Wage &amp; Tax Statement — Owner-Employee</div></td>
+          <td><span class="agency-pill ag-both">IRS / SSA</span></td>
+          <td><div class="due-date">January 31</div></td>
+          <td><span class="notes-text">The owner-employee must be on payroll and receive a W-2 reflecting <strong>reasonable compensation</strong> for services rendered. S-corp must withhold and match FICA on this amount. Furnish W-2 to owner and file with SSA by January 31. Failure to pay reasonable compensation is a leading IRS audit trigger for S-corps.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Form W-3</div><div class="filing-sub">Transmittal of Wage &amp; Tax Statements — to SSA</div></td>
+          <td><span class="agency-pill ag-both">SSA</span></td>
+          <td><div class="due-date">January 31</div></td>
+          <td><span class="notes-text">Summary transmittal accompanying all W-2s filed with SSA. Same due date as W-2s. File electronically via SSA Business Services Online. Required even for a single-employee (owner-employee) filing.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Form 1099-NEC</div><div class="filing-sub">Nonemployee Compensation — contractors ≥ $600</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">January 31</div></td>
+          <td><span class="notes-text">Required for each unincorporated contractor paid $600 or more during the tax year. Furnish to recipient and file with IRS by January 31. Collect Form W-9 from each contractor before first payment. <strong>E-filing required if filing 10 or more total information returns.</strong></span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Form 940</div><div class="filing-sub">Employer's Annual Federal Unemployment Tax Return (FUTA)</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">January 31<br><span style="font-size:10px;color:var(--muted)">(or Feb 10 if all FUTA taxes deposited timely)</span></div></td>
+          <td><span class="notes-text">FUTA applies to the first $7,000 of each employee's wages at 6% federal rate, offset by a credit of up to 5.4% for timely Maryland SUI payments — resulting in an effective federal rate of <strong>0.6%</strong>. Applies to owner-employee wages. Deposit FUTA taxes quarterly if FUTA liability exceeds $500.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland Form MW508</div><div class="filing-sub">Annual Employer Withholding Reconciliation Return</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller</span></td>
+          <td><div class="due-date">January 31</div></td>
+          <td><span class="notes-text">Reconciles all Maryland income tax withheld during the year against quarterly MW506 filings. File via Maryland bFile. Attach W-2 and 1099 data as required. Failure to reconcile can trigger matching notices from the Maryland Comptroller.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Form 1040 with Schedule E</div><div class="filing-sub">Owner's Individual Federal Income Tax Return</div></td>
+          <td><span class="agency-pill ag-irs">IRS</span></td>
+          <td><div class="due-date">April 15<br><span style="font-size:10px;color:var(--muted)">(extension to Oct 15 via Form 4868)</span></div></td>
+          <td><span class="notes-text">The owner reports W-2 wages on Line 1 and K-1 pass-through income on Schedule E. No self-employment tax on K-1 distributions. Owner also reports any Maryland PTE credit here. <strong>Note:</strong> An extension of Form 1040 does NOT extend payment — any taxes owed must be estimated and paid by April 15.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland Form 502</div><div class="filing-sub">Owner's Maryland Individual Income Tax Return</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller</span></td>
+          <td><div class="due-date">April 15<br><span style="font-size:10px;color:var(--muted)">(extension to Oct 15 via Form 502E)</span></div></td>
+          <td><span class="notes-text">Maryland conforms to federal S-corp treatment. The owner reports W-2 wages and K-1 income on Form 502. Maryland income tax rates range from 2% to <strong>5.75%</strong> on ordinary income, plus a local/county tax of <strong>2.25% to 3.2%</strong> depending on county of residence. If PTE Election was made, owner claims entity-level tax as a credit on Form 502CR.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This calendar is a general reference for a Maryland SMLLC with S-corp election for the 2025 tax year (filed in 2026). Deadlines assume a December 31 fiscal year end. Deadlines falling on a weekend or federal holiday move to the next business day.</p>
+      <p>S-corp compliance involves both entity-level and owner-level filings. Missing either layer can result in penalties or a lapse in S-corp status. Tax laws change frequently — consult a qualified CPA or tax attorney. This document does not constitute legal or tax advice.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRC §1361–1379 · IRS Form 1120-S Instructions · IRS Form 1040-ES Instructions · IRS Pub. 589 · Maryland Tax-Gen. §10-102.1 (PTE Election) · Maryland Comptroller PTE FAQs · IRS Rev. Rul. 2008-23 (reasonable compensation)</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     ENTITY MAINTENANCE
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-entity">
+  <div class="info-box">
+    <div class="info-box-title">📌 Note on Entity Structure</div>
+    The LLC legal entity remains intact after an S-corp tax election — only the <em>tax treatment</em> changes. The LLC must continue to maintain its Maryland registration, file its annual report, and comply with all state business requirements independently of the tax filing obligations.
+  </div>
+  <div class="section-card">
+    <div class="section-title">
+      Entity Maintenance — Maryland State Requirements
+      <span class="count">3 ITEMS · ANNUAL</span>
+    </div>
+    <table class="tbl">
+      <colgroup><col class="col-filing"/><col class="col-agency"/><col class="col-due"/><col class="col-notes"/></colgroup>
+      <thead class="tbl-head">
+        <tr><th>Filing / Requirement</th><th>Agency</th><th>Due Date</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Maryland Annual Report</div><div class="filing-sub">LLC Annual Report — Required for all Maryland LLCs</div></td>
+          <td><span class="agency-pill ag-sdat">MD SDAT</span></td>
+          <td><div class="due-date">April 15<br><span style="font-size:10px;color:var(--muted)">(each year · no extension available)</span></div></td>
+          <td><span class="notes-text">Required annually for all Maryland LLCs. Filing fee: <strong>$300</strong>. File online at Maryland Business Express (businessexpress.maryland.gov). Failure to file results in <strong>forfeiture of the LLC's charter</strong> — which could be used by creditors to pierce the liability veil. Late reinstatement requires payment of all back fees plus a $300 penalty per year missed.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Personal Property Return</div><div class="filing-sub">Maryland Business Personal Property Return (Form 1)</div></td>
+          <td><span class="agency-pill ag-sdat">MD SDAT</span></td>
+          <td><div class="due-date">April 15<br><span style="font-size:10px;color:var(--muted)">(filed with Annual Report · no extension)</span></div></td>
+          <td><span class="notes-text">Filed simultaneously with the Annual Report. Discloses all personal property (furniture, computers, equipment) owned by the LLC and located in Maryland. If the LLC owns no personal property, file a "no personal property" declaration. SDAT uses this to assess county-level business personal property tax. <strong>Penalty: $500 + taxes + interest</strong> for failure to file.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">New Hire Reporting</div><div class="filing-sub">Maryland Office of Child Support — each new hire or re-hire</div></td>
+          <td><span class="agency-pill ag-mdocse">MD OCSE</span></td>
+          <td><div class="due-date">Within 20 days<br>of hire or re-hire</div></td>
+          <td><span class="notes-text">Required for every new employee and re-hired employee, including the owner-employee if they are returning to payroll. Report via BEACON or the Maryland New Hire Registry at marylandtaxes.gov. Provides employer name, address, EIN, and employee name, address, and SSN. Penalty: $20–$500 per failure to report.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>Maryland LLC entity maintenance requirements exist independently of tax filing obligations. Failure to file the Annual Report can result in forfeiture of the LLC charter regardless of whether tax returns are current. Always verify current fees and procedures at businessexpress.maryland.gov.</p>
+      <p>This document does not constitute legal or tax advice. Consult a Maryland attorney or CPA for guidance on your specific situation.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: Maryland Corporations &amp; Associations Code Ann. §4A-913 · MD SDAT Annual Report Instructions · Maryland OCSE New Hire Reporting · Maryland Code Ann. Tax-Prop. §7-103</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     TAX COMPONENTS
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-components">
+  <div class="section-card">
+    <div class="section-title">
+      Key Tax Components — Rates, Wage Bases &amp; Applicability
+      <span class="count">9 ITEMS · <span class="yr-val" data-2025="2025 RATES" data-2026="2026 RATES">2025 RATES</span></span>
+    </div>
+    <table class="tbl">
+      <colgroup><col style="width:28%"/><col style="width:22%"/><col style="width:22%"/><col style="width:28%"/></colgroup>
+      <thead class="tbl-head">
+        <tr><th>Tax / Component</th><th>Paid By</th><th><span class="yr-val" data-2025="2025 Rate / Wage Base" data-2026="2026 Rate / Wage Base">2025 Rate / Wage Base</span></th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Federal Income Tax (Pass-Through)</div><div class="filing-sub">Form 1040 — Schedule E, K-1 income</div></td>
+          <td><span class="notes-text">Owner (individual)</span></td>
+          <td><div class="due-date" style="font-size:12px">Based on owner's 1040 brackets<br><span style="font-size:10px;color:var(--muted)">10%–37%</span></div></td>
+          <td><span class="notes-text">S-corp income flows to the owner's Form 1040. No entity-level federal income tax on the S-corp itself. K-1 distributions are <strong>not subject to self-employment tax</strong> — only W-2 wages are subject to FICA.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Social Security Tax (FICA)</div><div class="filing-sub">On W-2 wages only — not on K-1 distributions</div></td>
+          <td><span class="notes-text">Employer + Employee (6.2% each)</span></td>
+          <td><div class="due-date" style="font-size:12px"><span class="yr-val" data-2025="Wage base: $176,100" data-2026="Wage base: $184,500">Wage base: $176,100</span></div></td>
+          <td><span class="notes-text">Combined 12.4% rate split equally between the S-corp (as employer) and the owner-employee. Applies only to W-2 wages, not S-corp distributions. This FICA savings on distributions is a primary reason to elect S-corp status.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Medicare Tax (FICA)</div><div class="filing-sub">On W-2 wages · Additional tax on high income</div></td>
+          <td><span class="notes-text">Employer + Employee (1.45% each)</span></td>
+          <td><div class="due-date" style="font-size:12px">No wage base limit<br><span style="font-size:10px;color:var(--muted)">Additional 0.9% on employee wages &gt; $200,000</span></div></td>
+          <td><span class="notes-text">No wage cap. The additional 0.9% is withheld from employee only — no employer match on the additional Medicare. <strong>Note:</strong> Net Investment Income Tax (NIIT) of 3.8% may apply to S-corp income if owner is a passive investor — actively working owners generally are not subject to NIIT on S-corp income.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Federal Unemployment Tax (FUTA)</div><div class="filing-sub">Form 940 · First $7,000 per employee</div></td>
+          <td><span class="notes-text">Employer only</span></td>
+          <td><div class="due-date" style="font-size:12px">0.6% effective rate<br><span style="font-size:10px;color:var(--muted)">(after 5.4% MD SUI credit on $7,000/employee)</span></div></td>
+          <td><span class="notes-text">Gross FUTA rate is 6% on first $7,000 of wages per employee. A 5.4% credit applies if Maryland SUI is paid in full and on time, reducing the effective rate to <strong>0.6% ($42 per employee per year max)</strong>. Applies to owner-employee wages. Deposit if quarterly liability exceeds $500.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Maryland Income Tax (Pass-Through)</div><div class="filing-sub">Owner's Form 502 — K-1 income + W-2 wages</div></td>
+          <td><span class="notes-text">Owner (individual)</span></td>
+          <td><div class="due-date" style="font-size:12px">2% – 5.75%<br><span style="font-size:10px;color:var(--muted)">Graduated; top rate applies above $250,000</span></div></td>
+          <td><span class="notes-text">Maryland income tax is graduated: 2% up to $1,000; 3% up to $2,000; 4% up to $3,000; 4.75% up to $100,000; 5% up to $125,000; 5.25% up to $150,000; 5.5% up to $250,000; <strong>5.75% above $250,000</strong>. Maryland conforms to federal S-corp pass-through treatment.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland Local / County Income Tax</div><div class="filing-sub">Assessed on owner's Maryland taxable income</div></td>
+          <td><span class="notes-text">Owner (individual)</span></td>
+          <td><div class="due-date" style="font-size:12px">2.25% – 3.20%<br><span style="font-size:10px;color:var(--muted)">Based on county of residence</span></div></td>
+          <td><span class="notes-text">Maryland counties and Baltimore City levy a local income tax (piggyback tax) on top of state income tax. Rates in 2025: Baltimore City 3.2% · Prince George's 3.2% · Montgomery 3.2% · Anne Arundel 2.81% · Howard 3.2% · Frederick 2.96% · Baltimore County 2.83% · Carroll, Wicomico, Worcester 2.25%. Collected by the state and remitted to the locality.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Maryland State Unemployment Insurance (SUI)</div><div class="filing-sub">BEACON portal — quarterly</div></td>
+          <td><span class="notes-text">Employer only</span></td>
+          <td><div class="due-date" style="font-size:12px"><span class="yr-val" data-2025="Wage base: $8,500 · New employer: ~2.3%–2.6%" data-2026="Wage base: $8,500 · Rate TBD by DLLR">Wage base: $8,500 · New employer: ~2.3%–2.6%</span></div></td>
+          <td><span class="notes-text">Maryland has one of the lowest SUI taxable wage bases in the country at $8,500. New employer rate typically includes a base rate plus fund balance surcharges. Experience rates improve after 3 full years of payroll. The owner-employee's wages are subject to SUI unless the LLC qualifies for an exemption.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland PTE Election — Optional Entity Tax</div><div class="filing-sub">Form 511 · SALT deduction workaround</div></td>
+          <td><span class="notes-text">Entity (S-corp) — optional</span></td>
+          <td><div class="due-date" style="font-size:12px">8% resident · 8.25% nonresident corporate<br><span style="font-size:10px;color:var(--muted)">Tax paid at entity level; credit passes to owner</span></div></td>
+          <td><span class="notes-text">Maryland enacted the PTE Election (effective 2020) as a workaround to the federal $10,000 SALT deduction cap. The entity pays Maryland tax at the entity level; the owner receives a dollar-for-dollar credit on their Form 502. The entity-level tax is deductible on the federal Form 1120-S. <strong>Election must be made annually and is irrevocable once made for that year.</strong></span></td>
+        </tr>
+        <tr class="planning-row">
+          <td>
+            <div class="filing-name">Retirement Plan Contribution Limits</div>
+            <div class="filing-sub">Solo 401(k) · SEP-IRA · SIMPLE IRA</div>
+            <div class="planning-label">Planning Opportunity</div>
+          </td>
+          <td><span class="notes-text">Owner-employee (participant)</span></td>
+          <td><div class="due-date" style="font-size:12px"><span class="yr-val" data-2025="Solo 401(k): $70,000 total (employee + employer) · Employee deferral: $23,500 · Catch-up (50+): $7,500 · SEP-IRA: 25% of W-2 wages up to $70,000" data-2026="Solo 401(k): $71,000 total · Employee deferral: $24,500 · Catch-up (50+): $8,000 · SEP-IRA: 25% of W-2 wages up to $71,000">Solo 401(k): $70,000 total (employee + employer) · Employee deferral: $23,500 · Catch-up (50+): $7,500</span></div></td>
+          <td><span class="notes-text">S-corp owners may contribute to a Solo 401(k) both as an employee (elective deferral) and as the employer (profit-sharing up to 25% of W-2 wages). <strong>Reasonable compensation is the basis for employer profit-sharing contributions</strong> — higher W-2 wages allow larger employer contributions. Employee deferrals reduce federal AGI. Contribute by tax return due date including extensions.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>Tax rates and wage bases are subject to annual adjustment. Maryland local tax rates may change. Always verify current rates with the Maryland Comptroller and IRS before filing. This document does not constitute legal or tax advice.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Rev. Proc. 2024-61 · IRS Notice 2024-80 · Maryland Tax-Gen. §10-102.1 · Maryland Comptroller Local Tax Rates Table (2025) · Maryland DLLR SUI Rate Chart · Maryland Code Ann. Tax-Gen. §8-101</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     S-CORP PLANNING
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-planning">
+  <div class="info-box">
+    <div class="info-box-title">💡 Advisory Notes — S-Corp Planning Considerations</div>
+    These are key structural and planning considerations specific to an SMLLC taxed as an S-corp in Maryland. These are not filing deadlines but ongoing decisions that affect your tax liability and compliance risk profile.
+  </div>
+  <div class="section-card">
+    <div class="section-title">
+      S-Corp Tax Planning &amp; Structural Considerations
+      <span class="count">5 ITEMS · ONGOING ADVISORY NOTES</span>
+    </div>
+    <table class="tbl">
+      <colgroup><col style="width:28%"/><col style="width:15%"/><col style="width:57%"/></colgroup>
+      <thead class="tbl-head">
+        <tr><th>Planning Area</th><th>Priority</th><th>Analysis &amp; Guidance</th></tr>
+      </thead>
+      <tbody>
+        <tr class="alert-row">
+          <td>
+            <div class="filing-name">Reasonable Compensation (W-2 Salary)</div>
+            <div class="filing-sub">IRC §3121 · IRS Rev. Rul. 74-44</div>
+            <div class="alert-label">⚠️ Highest IRS Audit Risk</div>
+          </td>
+          <td><span style="color:#b91c1c;font-weight:700;font-size:12px;">Critical</span></td>
+          <td><span class="notes-text">The IRS requires S-corp shareholder-employees to receive reasonable compensation before taking tax-free distributions. Reasonable comp is what you would pay a third party to perform the same services. <strong>Factors include:</strong> industry compensation data, time and effort, duties performed, gross receipts, and distributions paid. Paying zero or nominal salary while taking large distributions triggers IRS reclassification — converting distributions to wages retroactively and assessing FICA + penalties. <strong>Best practice (IRS-recommended for audit defense):</strong> Prepare and retain a <em>contemporaneous written "Reasonable Compensation" study or memo</em> each year before setting your salary. The memo should cite comparable market data (e.g., BLS wage surveys, RCReports, or similar), describe your specific duties and hours, and record the board/manager resolution approving the salary. This documentation is your primary defense if audited — verbal rationale or after-the-fact justification carries far less weight. The IRS has flagged S-corp officer compensation as a high-priority enforcement area for 2026.</span></td>
+        </tr>
+        <tr class="alt">
+          <td>
+            <div class="filing-name">S-Corp vs. Disregarded Entity Break-Even Analysis</div>
+            <div class="filing-sub">FICA savings vs. added compliance costs</div>
+          </td>
+          <td><span style="color:#0d4f2e;font-weight:700;font-size:12px;">Annual Review</span></td>
+          <td><span class="notes-text">The S-corp election saves self-employment tax (15.3%) on distributions above the reasonable compensation amount. However, it adds compliance costs: Form 1120-S preparation, payroll processing, quarterly payroll tax deposits, and Maryland Form 510/511. <strong>General rule of thumb:</strong> S-corp election becomes cost-effective when net profit exceeds $40,000–$60,000 per year above reasonable compensation. Review annually with your CPA as income levels and tax rates change. If net income drops, consider revoking the S-corp election.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="filing-name">Maryland PTE Election — SALT Workaround</div>
+            <div class="filing-sub">Form 511 · Annual irrevocable election</div>
+            <div class="planning-label">✓ Tax Savings Opportunity</div>
+          </td>
+          <td><span style="color:#0d4f2e;font-weight:700;font-size:12px;">Evaluate Annually</span></td>
+          <td><span class="notes-text">Maryland's PTE Election (effective tax year 2020) allows the S-corp to pay Maryland income tax at the entity level (8% for resident owners), which is <strong>fully deductible on the federal return (Form 1120-S)</strong> — bypassing the $10,000 federal SALT deduction cap. The owner receives a credit on their Maryland Form 502 to eliminate double taxation. For Maryland residents with significant S-corp income, this election typically produces a net federal tax savings equal to the owner's federal marginal rate applied to the Maryland tax paid by the entity. <strong>The election is irrevocable for the year once made</strong> — evaluate carefully before filing Form 510D (first estimated payment) for the year.</span></td>
+        </tr>
+        <tr class="alt">
+          <td>
+            <div class="filing-name">S-Corp Election Validity &amp; Maintenance</div>
+            <div class="filing-sub">IRC §1362 · Form 2553 · one-class-of-stock rule</div>
+          </td>
+          <td><span style="color:#92400e;font-weight:700;font-size:12px;">Ongoing</span></td>
+          <td><span class="notes-text">An S-corp election can be inadvertently terminated if the entity violates S-corp eligibility requirements. <strong>Key rules to maintain:</strong> (1) Only one class of stock (no preferred equity or disproportionate distributions); (2) 100 or fewer shareholders; (3) Only eligible shareholders (U.S. citizens/residents — no corporations, partnerships, or most trusts); (4) Only one class of ownership interest. For a SMLLC, the single-owner structure naturally satisfies most rules, but any future addition of a second member or equity sharing arrangement must be reviewed. An inadvertent termination requires an IRS private letter ruling to reinstate — a costly process.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="filing-name">Basis Tracking &amp; Loss Limitations</div>
+            <div class="filing-sub">IRC §1366–1368 · at-risk rules</div>
+            <div class="planning-label">✓ Prevents Surprise Tax Bills</div>
+          </td>
+          <td><span style="color:#0d4f2e;font-weight:700;font-size:12px;">Annual</span></td>
+          <td><span class="notes-text">S-corp shareholders may only deduct losses to the extent of their basis in stock and debt. Unlike partnerships, S-corp shareholders <strong>do not get basis from entity-level liabilities</strong> — basis is limited to capital contributions and direct loans from the shareholder to the entity. Distributions in excess of basis are treated as capital gain. Track basis on a Form 7203 (required with Form 1040 if losses are claimed, stock basis is reduced by distributions, or prior-year losses were suspended). Proper basis tracking avoids unexpected capital gains on tax-free distributions.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>The planning notes above are general advisory information only and do not constitute tax, legal, or financial advice specific to your situation. The decision to make or maintain an S-corp election involves many factors specific to each taxpayer's circumstances. Always work with a qualified CPA or tax attorney before implementing planning strategies.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRC §1361–1379 · IRS Rev. Rul. 74-44 · IRS Form 7203 Instructions · Maryland Tax-Gen. §10-102.1 · IRS Notice 2005-91 · IRS S-Corp Audit Techniques Guide</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     TIMELINE
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-timeline">
+  <div class="info-box">
+    <strong style="color:#0d4f2e;">Color legend:</strong>
+    &nbsp;<span style="color:#92400e;font-weight:600;">Amber text</span> = Federal filing &nbsp;·&nbsp;
+    <span style="color:#701a75;font-weight:600;">Purple text</span> = Maryland state filing
+  </div>
+  <div class="section-card">
+    <div class="section-title">
+      Annual Compliance Timeline — Calendar Year
+      <span class="count">KEY FILING PERIODS</span>
+    </div>
+    <div class="timeline-grid">
+      <div class="tl-cell">
+        <div class="tl-month">January</div>
+        <ul class="tl-items">
+          <li class="fed">Form 941 Q4 (due Jan 31)</li>
+          <li class="fed">Form 940 — FUTA annual (Jan 31)</li>
+          <li class="fed">W-2 to owner-employee &amp; SSA (Jan 31)</li>
+          <li class="fed">W-3 to SSA (Jan 31)</li>
+          <li class="fed">1099-NEC to contractors &amp; IRS (Jan 31)</li>
+          <li class="md">MD MW508 annual reconciliation (Jan 31)</li>
+          <li class="md">MD SUI quarterly Q4 (Jan 31)</li>
+          <li class="md">MD MW506 Q4 quarterly filers (Jan 15)</li>
+        </ul>
+      </div>
+      <div class="tl-cell alt">
+        <div class="tl-month">March</div>
+        <ul class="tl-items">
+          <li class="fed">Form 1120-S — S-Corp return (<strong>Mar 16, 2026</strong>)</li>
+          <li class="md">MD Form 510 or 511 — PTE return (Mar 16, 2026)</li>
+          <li class="fed">Schedule K-1 issued to owner (Mar 16, 2026)</li>
+          <li style="font-size:11px;color:var(--dim);">Mar 15 falls on Sunday → moves to Mon Mar 16</li>
+          <li style="font-size:11px;color:var(--dim);">Or extend via Form 7004 / 510E</li>
+        </ul>
+      </div>
+      <div class="tl-cell">
+        <div class="tl-month">April</div>
+        <ul class="tl-items">
+          <li class="fed">Form 941 Q1 (due Apr 30)</li>
+          <li class="fed">Federal estimated tax Q1 (Apr 15)</li>
+          <li class="fed">Form 1040 — owner's return (Apr 15)</li>
+          <li class="md">MD Form 502 — owner's return (Apr 15)</li>
+          <li class="md">MD Annual Report + Personal Property (Apr 15)</li>
+          <li class="md">MD PTE estimated (510D) Q1 (Apr 15)</li>
+          <li class="md">MD SUI quarterly Q1 (Apr 30)</li>
+          <li class="md">MD MW506 Q1 quarterly filers (Apr 15)</li>
+        </ul>
+      </div>
+      <div class="tl-cell alt">
+        <div class="tl-month">June</div>
+        <ul class="tl-items">
+          <li class="fed">Federal estimated tax Q2 (Jun 15)</li>
+          <li class="md">MD estimated tax Q2 (Jun 15)</li>
+          <li class="md">MD PTE estimated (510D) Q2 (Jun 15)</li>
+        </ul>
+      </div>
+      <div class="tl-cell">
+        <div class="tl-month">July – October</div>
+        <ul class="tl-items">
+          <li class="fed">Form 941 Q2 (due Jul 31)</li>
+          <li class="md">MD SUI quarterly Q2 (Jul 31)</li>
+          <li class="md">MD MW506 Q2 quarterly filers (Jul 15)</li>
+          <li class="fed">Federal estimated tax Q3 (Sep 15)</li>
+          <li class="md">MD estimated tax Q3 (Sep 15)</li>
+          <li class="md">MD PTE estimated (510D) Q3 (Sep 15)</li>
+          <li class="fed">Form 1120-S extended return (Sep 15)</li>
+          <li class="md">MD Form 510/511 extended return (Oct 15)</li>
+          <li class="fed">Form 941 Q3 (due Oct 31)</li>
+          <li class="md">MD SUI quarterly Q3 (Oct 31)</li>
+        </ul>
+      </div>
+      <div class="tl-cell alt">
+        <div class="tl-month">December</div>
+        <ul class="tl-items">
+          <li class="md">MD estimated tax Q4 (Dec 15)</li>
+          <li class="md">MD PTE estimated (510D) Q4 (Dec 15)</li>
+          <li style="font-size:11px;color:var(--dim);">Note: Federal Q4 due Jan 15 — MD Q4 due Dec 15</li>
+          <li style="font-size:11px;color:var(--dim);">Review year-end payroll for W-2 accuracy</li>
+          <li style="font-size:11px;color:var(--dim);">Finalize retirement plan contributions</li>
+          <li style="font-size:11px;color:var(--dim);">Confirm PTE election decision for next year</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This timeline assumes a December 31 fiscal year end. Deadlines falling on weekends or federal/state holidays are moved to the next business day. Maryland estimated tax Q4 is due December 15 — earlier than the federal January 15 date. Always verify deadlines with the IRS and Maryland Comptroller for the current filing year.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Pub. 509 (2026) · Maryland Comptroller Tax Calendar · Maryland DLLR BEACON Guide</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     RISK FLAGS
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-riskflags">
+  <div class="section-card">
+    <div class="section-title">
+      ⚠️ Risk Flags — Penalty Reference &amp; Audit Triggers
+      <span class="count">7 ITEMS · GENERAL REFERENCE ONLY</span>
+    </div>
+    <table class="tbl">
+      <colgroup>
+        <col class="col-filing"/><col class="col-agency"/>
+        <col class="col-due"/><col class="col-notes"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr><th>Trigger / Risk</th><th>Authority</th><th>Penalty / Consequence</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr class="alert-row">
+          <td><div class="filing-name">Unreasonable / Zero Compensation</div><div class="filing-sub">Owner takes distributions but no W-2</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §3121</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">FICA reclassification</span><br><span style="font-size:10px;color:var(--muted);">All distributions may be recast as wages + penalties + interest</span></div></td>
+          <td><span class="notes-text">The IRS's most common S-corp enforcement action. Auditors reclassify distributions as wages, assess uncollected FICA (15.3%), plus a 20% accuracy-related penalty and interest. The Trust Fund Recovery Penalty (100% of unpaid trust fund taxes) may be assessed personally against the owner. This is the <strong>highest-risk area for single-owner S-corps.</strong></span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Late Form 1120-S</div><div class="filing-sub">S-Corp annual return not filed by March 15</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §6699</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$235/month<br>per shareholder</span><br><span style="font-size:10px;color:var(--muted);">max 12 months · $2,820 max for single-owner</span></div></td>
+          <td><span class="notes-text">Penalty accrues monthly for each month the return is late, multiplied by the number of shareholders. For a single-owner S-corp, maximum penalty is $2,820 (12 months × $235). The penalty runs separately from income tax penalties. Always file on extension (Form 7004) before March 15 to preserve the extension and avoid late-filing penalties.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Late Maryland Form 510/511</div><div class="filing-sub">PTE return not filed by March 15</div></td>
+          <td><span class="agency-pill ag-mdcomp">MD Comptroller Tax-Gen. §10-820</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">10% of tax owed</span><br><span style="font-size:10px;color:var(--muted);">+ 10%/year interest</span></div></td>
+          <td><span class="notes-text">Maryland imposes a 10% penalty on unpaid tax if the return is not filed by the due date or extended due date. Interest accrues at 10% per year on any unpaid balance. If extension (Form 510E) is filed, the return is due by October 15, but <strong>100% of estimated tax must be paid by March 15</strong> — underpaying on extension does not avoid the penalty.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Late / Missing Maryland Annual Report</div><div class="filing-sub">SDAT Annual Report not filed by April 15</div></td>
+          <td><span class="agency-pill ag-sdat">MD SDAT · Corps &amp; Assoc. Code</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">LLC Charter Forfeiture</span><br><span style="font-size:10px;color:var(--muted);">$300 penalty/year + reinstatement fees</span></div></td>
+          <td><span class="notes-text">Failure to file the annual report results in forfeiture of the LLC's charter by SDAT. A forfeited LLC loses its legal status and liability protection. Reinstatement requires filing all delinquent reports, paying all back fees, and a $100 reinstatement fee. Reinstatement is not guaranteed if third parties have taken adverse action during the forfeiture period.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Late W-2 / 1099-NEC</div><div class="filing-sub">Year-end information returns</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §6721–6722</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">$60–$340 per form</span><br><span style="font-size:10px;color:var(--muted);">regular graduated penalty · see notes for intentional disregard</span></div></td>
+          <td><span class="notes-text">Regular graduated penalty tiers: <strong>$60/form</strong> (within 30 days late) · <strong>$130/form</strong> (31 days to Aug 1) · <strong>$330–$340/form</strong> (after Aug 1 or not filed) — amounts adjusted annually for inflation. Separate penalties apply for failure to furnish to recipient vs. failure to file with IRS/SSA. <strong>Intentional disregard: $630+ per form with no cap</strong> — these are a distinct, higher-tier penalty assessed when the IRS determines willful non-compliance. Applies to the owner-employee's W-2 as well as any contractor 1099s. E-file via SSA Business Services Online (W-2) or an IRS-authorized provider (1099).</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Late FUTA / Payroll Tax Deposits</div><div class="filing-sub">Trust Fund Recovery Penalty (TFRP)</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §6672</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">TFRP — 100%</span><br><span style="font-size:10px;color:var(--muted);">of unpaid trust fund taxes · no cap</span></div></td>
+          <td><span class="notes-text">The Trust Fund Recovery Penalty is one of the most severe IRS penalties and is <strong>personally assessed against responsible parties</strong> — including the owner-employee of an S-corp. Trust fund taxes are the employee's share of FICA and federal income tax withheld. These amounts are held "in trust" for the IRS and must never be used for business expenses.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Inadvertent S-Corp Termination</div><div class="filing-sub">Violation of S-corp eligibility rules</div></td>
+          <td><span class="agency-pill ag-irs">IRS IRC §1362(d)</span></td>
+          <td><div class="due-date"><span style="color:#b91c1c;font-weight:700;">Loss of S-corp status</span><br><span style="font-size:10px;color:var(--muted);">5-year waiting period to re-elect</span></div></td>
+          <td><span class="notes-text">If the S-corp election is terminated (e.g., by adding an ineligible shareholder or creating a second class of stock), the entity reverts to C-corp taxation for the remainder of the year. Reinstatement requires an IRS private letter ruling for inadvertent terminations, or a 5-year wait to re-elect. Common triggers: adding a second member without proper structure review, transferring LLC interest to a trust, or issuing profit interests.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>Penalty amounts are subject to change and may be adjusted annually for inflation. This table is a general reference only. Always consult a qualified CPA, enrolled agent, or tax attorney for guidance specific to your situation and filing history.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS IRC §6699 · IRS IRC §6672 · IRS IRC §6721–6722 · IRS IRC §1362 · Maryland Tax-Gen. §10-820 · Maryland Corps &amp; Assoc. Code §4A-913 · IRS S-Corp Audit Techniques Guide</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     2025 vs 2026 COMPARISON
+════════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-yearcompare">
+  <div class="section-card">
+    <div class="section-title">
+      📊 2025 vs 2026 — What Changed
+      <span class="count">6 ITEMS · CONFIRMED CHANGES ONLY</span>
+    </div>
+    <table class="tbl">
+      <colgroup>
+        <col style="width:30%;"/><col style="width:22%;"/><col style="width:22%;"/><col style="width:26%;"/>
+      </colgroup>
+      <thead class="tbl-head">
+        <tr><th>Item</th><th>2025 (filing in 2026)</th><th>2026 (filing in 2027)</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="filing-name">Social Security Wage Base</div><div class="filing-sub">FICA on W-2 wages · Form 941</div></td>
+          <td><div class="due-date">$176,100</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$184,500</div></td>
+          <td><span class="notes-text">+$8,400 increase. Higher wage base means higher employer and employee FICA on W-2 wages — directly affecting the owner-employee's payroll tax cost if reasonable compensation exceeds $176,100. Rate (6.2% each) unchanged.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Solo 401(k) Total Contribution Limit</div><div class="filing-sub">Employee deferral + employer profit-sharing</div></td>
+          <td><div class="due-date">$70,000<br><span style="font-size:10px;color:var(--muted)">Employee: $23,500</span></div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$71,000<br><span style="font-size:10px;color:var(--muted);">Employee: $24,500</span></div></td>
+          <td><span class="notes-text">+$1,000 increase in total limit. Employee deferral increases by $1,000 to $24,500. Employer profit-sharing portion (25% of W-2 wages up to the overall limit) also increases. SECURE 2.0 catch-up for age 60–63 remains at $11,250 for 2026.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Catch-Up Contribution (Age 50+)</div><div class="filing-sub">Solo 401(k) / SIMPLE IRA</div></td>
+          <td><div class="due-date">$7,500 (401k)<br>$3,500 (SIMPLE)</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$8,000 (401k)<br>$3,500 (SIMPLE)</div></td>
+          <td><span class="notes-text">+$500 for 401(k) catch-up. SIMPLE IRA catch-up unchanged. SECURE 2.0 super catch-up for ages 60–63 remains at $11,250 for 2026 (no change from 2025). Confirm eligibility with your plan administrator.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Late Filing Penalty — Form 1120-S</div><div class="filing-sub">Per-shareholder monthly penalty</div></td>
+          <td><div class="due-date">$235/month<br>per shareholder</div></td>
+          <td><div class="due-date" style="color:#166534;font-weight:700;">$245/month<br>per shareholder</div></td>
+          <td><span class="notes-text">IRS inflation-adjusted penalty increase. For a single-owner S-corp, the maximum annual penalty increases from $2,820 to $2,940 (12 months × $245). File on extension to avoid entirely. Confirm the 2026 rate at IRS.gov as adjustments are announced each fall.</span></td>
+        </tr>
+        <tr>
+          <td><div class="filing-name">Maryland SUI Wage Base</div><div class="filing-sub">BEACON quarterly contribution</div></td>
+          <td><div class="due-date">$8,500</div></td>
+          <td><div class="due-date">$8,500<br><span style="font-size:10px;color:var(--muted);">Subject to DLLR announcement</span></div></td>
+          <td><span class="notes-text">Maryland's SUI taxable wage base has remained at $8,500 for multiple years — one of the lowest in the nation. DLLR may adjust the base or experience rate surcharges for 2026. Verify current rates at dllr.maryland.gov each January before processing Q1 payroll.</span></td>
+        </tr>
+        <tr class="alt">
+          <td><div class="filing-name">Maryland PTE Election Rate</div><div class="filing-sub">Form 511 — entity-level tax</div></td>
+          <td><div class="due-date">8% (residents)<br>8.25% (nonresident corporate)</div></td>
+          <td><div class="due-date">8% (residents)<br>8.25% (nonresident corporate)<br><span style="font-size:10px;color:var(--muted);">No confirmed change for 2026</span></div></td>
+          <td><span class="notes-text">No confirmed rate change for 2026 as of this publication. The PTE election must be made fresh each tax year — it does not carry over automatically. Monitor Maryland General Assembly for any rate legislation that may affect the 2026 tax year.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="disclaimer">
+    <div class="disclaimer-title">⚠️ Disclaimer</div>
+    <div class="disclaimer-body">
+      <p>This comparison reflects confirmed and projected changes between the 2025 and 2026 tax years as of April 2026. Rates and limits marked as subject to announcement should be verified before filing. Tax laws may change due to legislation. This document does not constitute legal or tax advice.</p>
+    </div>
+    <div class="disclaimer-sources">Sources: IRS Rev. Proc. 2024-61 · IRS Notice 2024-80 · IRS Notice 2025-82 · Maryland DLLR Annual Rate Chart · Maryland Comptroller PTE FAQs · IRS Pub. 509 (2026)</div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<!-- FOOTER -->
+<footer style="background:#0d4f2e;border-top:1px solid #2d4a7a;padding:18px 48px;text-align:center;margin-top:0;">
+  <span style="font-family:'Source Sans 3',sans-serif;font-size:11px;color:#c9a84c;letter-spacing:1px;">
+    Created by: <strong style="color:#fff;font-weight:600;">Sorphoan Ear</strong>
+    <span style="color:#1a6b3e;margin:0 8px;">·</span>
+    Founder &amp; Managing Partner
+    <span style="color:#1a6b3e;margin:0 8px;">·</span>
+    NP CFO Advisory LLC
+    <span style="color:#1a6b3e;margin:0 8px;">·</span>
+    <span style="color:#94a3b8;">Created: April 15, 2026 — content may become outdated; verify deadlines with IRS and Maryland Comptroller before relying on this document</span>
+  </span>
+</footer>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+  document.getElementById('panel-' + tab).classList.add('active');
+}
+
+function setYear(yr) {
+  document.querySelectorAll('.yr-val').forEach(el => {
+    const val = el.dataset[yr];
+    if (val !== undefined) el.textContent = val;
+  });
+  document.querySelectorAll('.yr-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.yr === yr);
+  });
+  const compTitle = document.querySelector('#panel-components .section-title .count');
+  if (compTitle) {
+    compTitle.textContent = yr === '2025' ? '9 ITEMS · 2025 RATES' : '9 ITEMS · 2026 RATES';
+  }
+}
+</script>
+</body>
+</html>
